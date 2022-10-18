@@ -1,0 +1,19 @@
+@use "../../styling/mixins";
+
+.hero {
+    background-image: url("/img/header.webp");
+    background-size: cover;
+    background-position: 70%;
+
+    color: white;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        @include mixins.separate-from-border();
+        font-size: 2rem;
+        width: 60%;
+        margin: 0;
+    }
+}

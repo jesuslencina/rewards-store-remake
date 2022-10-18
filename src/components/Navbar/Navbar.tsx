@@ -63,7 +63,7 @@ const Navbar = () => {
                 color="#6ed1ff"
                 size={32}
                 className="burger-menu"
-                onClick={menuToggle}
+                onClick={() => menuToggle()}
             />
         </header>
     );
