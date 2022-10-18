@@ -17,6 +17,30 @@
         color: variables.$secondary;
     }
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2vh 0.25rem;
+
+        h2 {
+            margin: 0;
+        }
+
+        .coin-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            align-self: flex-end;
+            gap: 0.5rem;
+            border: 2pt solid variables.$secondary;
+            color: variables.$text-color;
+            border-radius: 9px;
+            width: fit-content;
+        }
+    }
+
     .products-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
