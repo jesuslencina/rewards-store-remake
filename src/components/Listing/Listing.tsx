@@ -1,17 +1,20 @@
 import "./Listing.scss";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IProduct } from "../../utils/product.interface";
 import { requestHeaders } from "../../utils/requestHeaders";
 import Product from "./Product/Product";
 import coin_icon from "../../assets/coin.webp";
+import { context } from "../Context/Context";
 
 const Listing = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
 
+    const { userData } = useContext(context);
+
     const getProducts = () => {
         axios
-            .get(import.meta.env.VITE_API_URL, requestHeaders)
+            .get(`${import.meta.env.VITE_API_URL}/products`, requestHeaders)
             .then((response) => setProducts(response.data));
     };
 
@@ -27,7 +30,7 @@ const Listing = () => {
                         <h2>Catálogo</h2>
 
                         <div className="coin-indicator">
-                            <span>5000</span>
+                            <span>{userData.points}</span>
                             <img
                                 width={24}
                                 height={24}

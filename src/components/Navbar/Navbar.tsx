@@ -8,11 +8,15 @@ import { FiPlus } from "react-icons/fi";
 import { MdOutlineHistoryToggleOff } from "react-icons/md";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import { useContext } from "react";
+import { context } from "../Context/Context";
 
 const Navbar = () => {
     const [menuClass, menuToggle] = useTransition({
         timeout: 500,
     });
+
+    const { userData } = useContext(context);
 
     return (
         <header>
@@ -34,7 +38,7 @@ const Navbar = () => {
                 <strong>Menú</strong>
 
                 <div className="profile-area">
-                    <p>Jesús</p>
+                    <p>{userData.name}</p>
                     <div>
                         <button>
                             <FiPlus color="white" size={20} />
@@ -49,7 +53,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="coin-indicator">
-                    <span>5000</span>
+                    <span>{userData.points}</span>
                     <img
                         width={24}
                         height={24}
