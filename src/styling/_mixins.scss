@@ -1,0 +1,25 @@
+@mixin separate-from-border {
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+@keyframes expand {
+    0% {
+        opacity: 0;
+        transform: translateX(100%) translateY(-100%);
+        transform-origin: 100% 0%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+        transform-origin: 100% 0%;
+    }
+}
+
+@mixin animate-expand {
+    animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@mixin animate-un-expand {
+    animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) reverse;
+}
