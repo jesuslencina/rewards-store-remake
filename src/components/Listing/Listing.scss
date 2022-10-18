@@ -1,0 +1,25 @@
+@use "../../styling/variables";
+@use "../../styling/mixins";
+
+.listing {
+    background-color: #f0f0f0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mixins.separate-from-border();
+
+    .loading {
+        margin-top: 2vh;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        color: variables.$secondary;
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}

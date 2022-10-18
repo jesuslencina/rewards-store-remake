@@ -1,0 +1,26 @@
+@use "../../../styling/variables";
+@use "../../../styling/mixins";
+
+.product {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    @include mixins.separate-from-border();
+    padding-bottom: 1rem;
+
+    border-radius: 9px;
+    box-shadow: variables.$box-shadow;
+
+    h4 {
+        margin-bottom: 0.5rem;
+        color: variables.$primary;
+    }
+
+    .cost-container {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        width: fit-content;
+        font-size: 0.9rem;
+    }
+}

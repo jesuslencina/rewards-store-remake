@@ -1,4 +1,7 @@
+@use "./styling/variables";
+
 body {
     margin: 0;
     font-family: "Rubik", "Inter", Arial, Helvetica, sans-serif;
+    color: variables.$text-color;
 }
