@@ -52,7 +52,12 @@ const Product = (props: IProductProps) => {
             className={`product ${
                 props.cost > userData.points && "not-enough"
             }`}>
-            <img src={props.img.url} alt={props.name} width="100%" />
+            <img
+                src={props.img.url}
+                alt={props.name}
+                width="100%"
+                className="product-img"
+            />
             <h4>{props.name}</h4>
             <div className="cost-container">
                 <span>{props.cost}</span>
@@ -61,6 +66,8 @@ const Product = (props: IProductProps) => {
             <button
                 className="buy-button"
                 onClick={() => props.cost <= userData.points && handleBuy()}
+                onMouseEnter={() => setIsTouching(true)}
+                onMouseLeave={() => setIsTouching(false)}
                 onTouchStart={() => setIsTouching(true)}
                 onTouchEnd={() => setIsTouching(false)}>
                 <img

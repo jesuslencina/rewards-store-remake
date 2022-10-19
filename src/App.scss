@@ -5,3 +5,13 @@ body {
     font-family: "Rubik", "Inter", Arial, Helvetica, sans-serif;
     color: variables.$text-color;
 }
+
+.toast {
+    padding-left: "25%";
+    margin-top: 1vh;
+
+    @media screen and (min-width: variables.$pc-breakpoint) {
+        padding-left: unset;
+        margin-top: 6vh;
+    }
+}

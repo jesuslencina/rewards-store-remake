@@ -39,4 +39,27 @@
         pointer-events: none;
         filter: grayscale(1);
     }
+
+    @media screen and (min-width: variables.$pc-breakpoint) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        .product-img {
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+        }
+
+        .buy-button {
+            cursor: pointer;
+            border-radius: 99px;
+
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+                background-color: white;
+                border: 2pt solid variables.$secondary;
+            }
+        }
+    }
 }

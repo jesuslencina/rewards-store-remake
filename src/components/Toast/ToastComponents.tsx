@@ -6,7 +6,7 @@ const ToastComponent = () => (
         autoClose={2000}
         limit={2}
         hideProgressBar
-        style={{ paddingLeft: "25%", marginTop: "1vh" }}
+        className="toast"
     />
 );
 

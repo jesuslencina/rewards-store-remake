@@ -46,4 +46,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
+    @media screen and (min-width: variables.$pc-breakpoint) {
+        .products-container {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
 }

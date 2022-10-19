@@ -101,4 +101,51 @@ header {
             }
         }
     }
+
+    @media screen and (min-width: variables.$pc-breakpoint) {
+        nav {
+            all: unset;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+
+            &.exited {
+                transform: none;
+            }
+
+            .coin-indicator {
+                color: variables.$text-color;
+                border-color: variables.$secondary;
+                margin-right: 1rem;
+                margin-bottom: 0;
+                align-self: unset;
+                padding: 0.5rem 1rem;
+            }
+
+            .profile-area {
+                background: variables.$primary-gradient;
+                gap: 5rem;
+
+                p {
+                    margin: 0;
+                }
+
+                button {
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        filter: brightness(1.2);
+                    }
+                }
+            }
+        }
+
+        .burger-menu,
+        .close-icon,
+        .close-icon ~ strong {
+            display: none;
+        }
+    }
 }
