@@ -20,5 +20,9 @@
 
     @media screen and (min-width: variables.$pc-breakpoint) {
         min-height: 50vh;
+
+        h1 {
+            font-size: 3rem;
+        }
     }
 }
