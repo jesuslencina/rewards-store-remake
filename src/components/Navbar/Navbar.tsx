@@ -8,15 +8,41 @@ import { FiPlus } from "react-icons/fi";
 import { MdOutlineHistoryToggleOff } from "react-icons/md";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { context } from "../Context/Context";
+import { requestHeaders } from "../../utils/requestHeaders";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const [menuClass, menuToggle] = useTransition({
         timeout: 500,
     });
 
-    const { userData } = useContext(context);
+    const [isOnCooldown, setIsOnCooldown] = useState<boolean>(false);
+
+    const { userData, retrieveData } = useContext(context);
+
+    const addPoints = () => {
+        const possibleAmounts = [1000, 5000, 7500];
+
+        const randomAmount = possibleAmounts[Math.floor(Math.random() * 4)];
+
+        axios
+            .post(
+                `${import.meta.env.VITE_API_URL}/user/points`,
+                { amount: randomAmount },
+                requestHeaders
+            )
+            .then(() => toast(`¡${randomAmount} puntos canjeados!`))
+            .catch(() => toast("Ocurrió un error :("))
+            .finally(() => {
+                retrieveData();
+                setIsOnCooldown(true);
+
+                setTimeout(() => setIsOnCooldown(false), 12000);
+            });
+    };
 
     return (
         <header>
@@ -40,7 +66,7 @@ const Navbar = () => {
                 <div className="profile-area">
                     <p>{userData.name}</p>
                     <div>
-                        <button>
+                        <button onClick={addPoints} disabled={isOnCooldown}>
                             <FiPlus color="white" size={20} />
                         </button>
                         <button>

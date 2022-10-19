@@ -92,6 +92,12 @@ header {
                 border-radius: 99%;
                 width: 2rem;
                 height: 2rem;
+
+                transition: background-color 0.3s ease-in-out;
+
+                &:disabled {
+                    background-color: variables.$text-color;
+                }
             }
         }
     }

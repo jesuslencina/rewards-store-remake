@@ -10,6 +10,8 @@ import { context } from "../Context/Context";
 const Listing = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
 
+    const [isOnCooldown, setIsOnCooldown] = useState<boolean>(false);
+
     const { userData } = useContext(context);
 
     const getProducts = () => {
@@ -41,7 +43,12 @@ const Listing = () => {
                     </div>
                     <div className="products-container">
                         {products.map((product) => (
-                            <Product key={product._id} {...product} />
+                            <Product
+                                key={product._id}
+                                {...product}
+                                isOnCooldown={isOnCooldown}
+                                setIsOnCooldown={setIsOnCooldown}
+                            />
                         ))}
                     </div>
                 </>

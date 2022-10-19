@@ -10,6 +10,8 @@
     position: relative;
     border-radius: 9px;
     box-shadow: variables.$box-shadow;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
 
     h4 {
         margin-bottom: 0.5rem;
@@ -31,5 +33,10 @@
         border: none;
         bottom: -15px;
         right: -15px;
+    }
+
+    &.not-enough {
+        pointer-events: none;
+        filter: grayscale(1);
     }
 }
