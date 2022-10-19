@@ -2,7 +2,7 @@
 
 Remake del proyecto final de Acámica, brindado por Aerolab. Realizado como desafío personal en menos de 24 horas
 
-[Ver deploy]()
+[Ver deploy](https://rewards-store-remake.vercel.app/)
 
 ## Librerías utilizadas
 
