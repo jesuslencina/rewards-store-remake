@@ -18,7 +18,7 @@ const History = () => {
                         onClick={switchHistoryOpen}
                     />
                 </p>
-                <h2>History</h2>
+                <h2>Historial</h2>
                 <div className="history-container">
                     {userData.redeemHistory.map((item) => (
                         <article key={item._id} className="history-item">
