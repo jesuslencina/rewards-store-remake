@@ -1,0 +1,72 @@
+@use "../../styling/variables";
+@use "../../styling/mixins";
+
+.modal-bg {
+    background-color: #808080ab;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.closed {
+        display: none;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .modal-body {
+        width: 80%;
+        height: 80%;
+        border-radius: 9px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .close-p {
+            margin-right: 1.75rem;
+            width: 100%;
+            text-align: right;
+        }
+
+        .history-container {
+            overflow-y: scroll;
+            @include mixins.separate-from-border;
+
+            .history-item {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                margin-bottom: 1rem;
+
+                .text {
+                    padding-left: 1rem;
+                    grid-column: span 2;
+
+                    .cost-container {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.25rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: variables.$pc-breakpoint) {
+        .modal-body {
+            width: 30%;
+        }
+
+        .modal-body .close-p{
+            cursor: pointer;
+        }
+    }
+}

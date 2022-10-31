@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const [isOnCooldown, setIsOnCooldown] = useState<boolean>(false);
 
-    const { userData, retrieveData } = useContext(context);
+    const { userData, retrieveData, switchHistoryOpen } = useContext(context);
 
     const addPoints = () => {
         const possibleAmounts = [1000, 5000, 7500];
@@ -69,7 +69,7 @@ const Navbar = () => {
                         <button onClick={addPoints} disabled={isOnCooldown}>
                             <FiPlus color="white" size={20} />
                         </button>
-                        <button>
+                        <button onClick={switchHistoryOpen}>
                             <MdOutlineHistoryToggleOff
                                 color="white"
                                 size={20}

@@ -1,6 +1,7 @@
 # Rewards Store Remake
 
-Remake del proyecto final de Acámica, brindado por Aerolab. Realizado como desafío personal en menos de 24 horas
+Remake del proyecto final de Acámica, brindado por Aerolab. Realizado como desafío personal en menos de 24 horas¹
+
 
 [Ver deploy](https://rewards-store-remake.vercel.app/)
 
@@ -18,6 +19,5 @@ Remake del proyecto final de Acámica, brindado por Aerolab. Realizado como desa
 -   BoxySVG y GIMP para manipulación de assets gráficas
 -   YOGA image optimizer para conversiones
 
-## TODO
 
--   Implementar historial de canjes
+¹ Se ha implementado posterior a ese tiempo la feature de historial y algunas mejoras.

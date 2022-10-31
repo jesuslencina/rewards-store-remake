@@ -69,7 +69,8 @@ const Product = (props: IProductProps) => {
                 onMouseEnter={() => setIsTouching(true)}
                 onMouseLeave={() => setIsTouching(false)}
                 onTouchStart={() => setIsTouching(true)}
-                onTouchEnd={() => setIsTouching(false)}>
+                onTouchEnd={() => setIsTouching(false)}
+                disabled={props.isOnCooldown}>
                 <img
                     src={
                         !isTouching && props.cost <= userData.points

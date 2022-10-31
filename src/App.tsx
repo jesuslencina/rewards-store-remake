@@ -5,6 +5,7 @@ import { ContextWrapper } from "./components/Context/Context";
 import Hero from "./components/Hero/Hero";
 import Listing from "./components/Listing/Listing";
 import Navbar from "./components/Navbar/Navbar";
+import History from "./components/History/History";
 import ToastComponent from "./components/Toast/ToastComponents";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
                 <Navbar />
                 <Hero />
                 <Listing />
+                <History />
             </ContextWrapper>
         </>
     );
